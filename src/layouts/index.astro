@@ -1,0 +1,31 @@
+---
+import Nav from "../components/nav.astro"
+import "../styles/global.css"
+---
+
+<html>
+  <body>
+    <Nav/>
+    <main class="main">
+        <article class="content">
+            <slot/>
+        </article>
+    </main>
+  </body>
+</html>
+
+<style>
+    .main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 32px;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      width: 70%;
+    }
+</style>

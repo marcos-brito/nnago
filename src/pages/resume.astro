@@ -1,0 +1,26 @@
+---
+import Index from "../layouts/index.astro"
+---
+
+<Index>
+    <div>
+        <p>You can read a little about who I am in the <a href="/nnago/about">about</a> page.</p>
+        <p>My resume is available for download <a href="/nnago/resume.pdf" download>here</a> and you can find me in these places:</p>
+        <ul>
+            <li><a href="https://github.com/marcos-brito">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/marcos-brito-61554b1ba/">Linkedin</a></li>
+        </ul>
+    </div>
+</Index>
+
+<style>
+    a {
+        color: #7daea3;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+</style>

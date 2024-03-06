@@ -23,16 +23,32 @@ a {
   text-decoration: none;
 }
 
-.main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 32px;
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  width: 70%;
+p {
+  font-size: 18px;
+  line-height: 2rem;
+}
+
+pre {
+  padding: 32px 32px;
+  overflow: auto;
+  border-radius: 8px;
+  background: var(--background2);
+  font-weight: 600;
+}
+
+ul {
+  margin-left: 32px;
+  font-size: 18px;
+  line-height: 2rem;
+}
+
+code {
+  line-height: 1.5rem;
+  white-space: pre;
 }

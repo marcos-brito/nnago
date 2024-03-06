@@ -1,0 +1,29 @@
+---
+import ClockIcon from "./clock_icon.astro"
+import {calculateReadingTime} from "../utils.js"
+
+const {path} = Astro.props;
+const timeToRead = await calculateReadingTime(path);
+---
+
+<div class="time">
+    <ClockIcon/>
+    <p>{timeToRead} min</p>
+</div> 
+
+<style>
+    .time {
+        display: flex;
+        gap: 6px;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--background);
+        padding: 8px;
+        border-radius: 12px;
+    } 
+
+    p {
+        font-size: initial;
+        line-height: normal;
+    }
+</style>

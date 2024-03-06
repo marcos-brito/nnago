@@ -1,0 +1,10 @@
+---
+import Index from "../layouts/index.astro"
+import PostCard from "../components/post_card.astro"
+
+const posts = await Astro.glob("./posts/*.md")
+---
+
+<Index>
+    {posts.map((post) => <PostCard frontmatter={post.frontmatter} url={post.url} path={post.file}/>)}
+</Index>

@@ -13,6 +13,10 @@
   margin: 0;
   color: #ddc7a1;
   font-family: "Inter", sans-serif;
+
+*::selection {
+    background-color: var(--highlight);
+    color: var(--background);
 }
 
 body {

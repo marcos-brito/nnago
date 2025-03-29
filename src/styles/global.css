@@ -31,7 +31,7 @@ a {
 }
 
 img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
 }
@@ -47,14 +47,9 @@ blockquote {
     gap: 8px;
     margin-top: 16px;
     margin-bottom: 16px;
-}
-
-blockquote::before {
-    content: " ";
-    width: 3px;
-    height: 32px;
-    background-color: var(--highlight);
-    font-weight: 600;
+    border-left: 4px solid var(--highlight);
+    padding-left: 8px;
+    opacity: 80%;
 }
 
 pre {
@@ -74,4 +69,80 @@ ul {
 code {
     line-height: 1.5rem;
     white-space: pre;
+}
+
+p code {
+    background: var(--background2);
+    padding: 4px;
+    font-style: italic;
+}
+
+.token.comment,
+.token.prolog,
+.token.cdata {
+    color: #282828;
+}
+
+.token.delimiter,
+.token.keyword,
+.token.selector,
+.token.important,
+.token.atrule {
+    color: #ea6962;
+}
+
+.token.punctuation {
+    color: #ddc7a1;
+}
+
+.token.tag,
+.token.class-name,
+.token.tag .punctuation,
+.token.attr-name,
+.token.doctype {
+    color: #d8a657;
+}
+
+.token.entity,
+.token.boolean,
+.token.number,
+.token.symbol {
+    color: #d3869b;
+}
+
+.token.property,
+.token.constant,
+.token.operator,
+.token.variable {
+    color: #e78a4e;
+}
+
+.token.string,
+.token.builtin,
+.token.url,
+.token.function,
+.token.regex,
+.token.char {
+    color: #a9b665;
+}
+
+.token.attr-value,
+.token.attr-value .punctuation {
+    color: #282828;
+}
+
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+.token.inserted {
+    background: #282828;
+}
+
+.token.deleted {
+    background: #fb4934;
 }

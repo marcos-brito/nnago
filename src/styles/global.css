@@ -4,20 +4,25 @@
     --background: #141617;
     --background2: #17191b;
     --foreground: #ddc7a1;
-    --highlight: #d3869b;
-    --highlight2: #7daea3;
+    --blue: #7daea3;
+    --magenta: #d3869b;
+    --grenn: #a9b665;
+    --cyan: #89b482;
+    --yellow: #d8a657;
+    --red: #ea6962;
+}
 }
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    color: #ddc7a1;
+    color: var(--foreground);
     font-family: "Inter", sans-serif;
 }
 
 *::selection {
-    background-color: var(--highlight);
+    background-color: var(--magenta);
     color: var(--background);
 }
 
@@ -27,7 +32,7 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--highlight2);
+    color: var(--magenta2);
 }
 
 img {
@@ -47,7 +52,7 @@ blockquote {
     gap: 8px;
     margin-top: 16px;
     margin-bottom: 16px;
-    border-left: 4px solid var(--highlight);
+    border-left: 4px solid var(--magenta);
     padding-left: 8px;
     opacity: 80%;
 }

@@ -11,6 +11,9 @@
     --yellow: #d8a657;
     --red: #ea6962;
 }
+
+svg {
+    stroke: var(--red);
 }
 
 * {

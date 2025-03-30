@@ -1,156 +1,151 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
 
 :root {
-    --background: #141617;
-    --background2: #17191b;
-    --foreground: #ddc7a1;
-    --blue: #7daea3;
-    --magenta: #d3869b;
-    --grenn: #a9b665;
-    --cyan: #89b482;
-    --yellow: #d8a657;
-    --red: #ea6962;
+  --background: #141617;
+  --background2: #17191b;
+  --foreground: #ddc7a1;
+  --blue: #7daea3;
+  --magenta: #d3869b;
+  --grenn: #a9b665;
+  --cyan: #89b482;
+  --yellow: #d8a657;
+  --red: #ea6962;
 }
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    color: var(--foreground);
-    font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: var(--foreground);
+  font-family: "Inter", sans-serif;
 }
 
 *::selection {
-    background-color: var(--magenta);
-    color: var(--background);
+  background-color: var(--magenta);
+  color: var(--background);
 }
 
 body {
-    background-color: var(--background);
+  background-color: var(--background);
 }
 
 a {
-    text-decoration: none;
-    color: var(--blue);
+  text-decoration: none;
+  color: var(--blue);
 }
 
 svg {
-    stroke: var(--red);
+  stroke: var(--red);
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 p {
-    font-size: 18px;
-    line-height: 2rem;
+  font-size: 18px;
+  line-height: 2rem;
 }
 
 blockquote {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    border-left: 4px solid var(--magenta);
-    padding-left: 8px;
-    opacity: 80%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-left: 4px solid var(--magenta);
+  padding-left: 8px;
+  opacity: 80%;
 }
 
 pre {
-    padding: 32px 32px;
-    overflow: auto;
-    border-radius: 8px;
-    background: var(--background2);
-    font-weight: 600;
+  padding: 32px 32px;
+  overflow: auto;
+  border-radius: 8px;
+  background: var(--background2);
+  font-weight: 600;
 }
 
 ul {
-    margin-left: 32px;
-    font-size: 18px;
-    line-height: 2rem;
+  margin-left: 32px;
+  font-size: 18px;
+  line-height: 2rem;
 }
 
 code {
-    line-height: 1.5rem;
-    white-space: pre;
+  line-height: 1.5rem;
+  white-space: pre;
 }
 
 p code {
-    background: var(--background2);
-    padding: 4px;
-    font-style: italic;
+  background: var(--background2);
+  padding: 4px;
+  font-style: italic;
 }
 
 .token.comment,
 .token.prolog,
-.token.cdata {
-    color: #282828;
+.token.doctype,
+.token.punctuation .token.cdata {
+  color: var(--foreground);
 }
 
-.token.delimiter,
-.token.keyword,
-.token.selector,
-.token.important,
-.token.atrule {
-    color: #ea6962;
-}
-
-.token.punctuation {
-    color: #ddc7a1;
-}
-
-.token.tag,
-.token.class-name,
-.token.tag .punctuation,
-.token.attr-name,
-.token.doctype {
-    color: #d8a657;
-}
-
-.token.entity,
-.token.boolean,
-.token.number,
-.token.symbol {
-    color: #d3869b;
+.token.namespace {
+  opacity: 0.7;
 }
 
 .token.property,
+.token.tag,
+.token.boolean,
+.token.number,
 .token.constant,
-.token.operator,
-.token.variable {
-    color: #e78a4e;
+.token.symbol,
+.token.deleted {
+  color: var(--magenta);
 }
 
-.token.string,
+.token.selector,
+.token.attr-name,
+.token.function,
+.token.inserted {
+  color: var(--grenn);
+}
+
+.token.operator,
+.token.entity,
 .token.builtin,
 .token.url,
-.token.function,
-.token.regex,
-.token.char {
-    color: #a9b665;
+.token.class-name,
+.language-css .token.string,
+.style .token.string {
+  color: var(--yellow);
 }
 
+.token.atrule,
 .token.attr-value,
-.token.attr-value .punctuation {
-    color: #282828;
+.token.keyword {
+  color: var(--red);
 }
 
+.token.regex,
+.token.important,
+.token.char,
+.token.string,
+.token.variable {
+  color: var(--cyan);
+}
+
+.token.important,
 .token.bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .token.italic {
-    font-style: italic;
+  font-style: italic;
 }
 
-.token.inserted {
-    background: #282828;
-}
-
-.token.deleted {
-    background: #fb4934;
+.token.entity {
+  cursor: help;
 }

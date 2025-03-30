@@ -1,5 +1,5 @@
 ---
-import Index from "../layouts/index.astro"
+import Base from "../layouts/base.astro"
 import PostCard from "../components/post_card.astro"
 import type { MarkdownInstance } from "astro";
 import type { FrontMatter } from "../utils";
@@ -7,6 +7,6 @@ import type { FrontMatter } from "../utils";
 const posts = Object.values(import.meta.glob<MarkdownInstance<FrontMatter>>('./posts/*.md', { eager: true }));
 ---
 
-<Index>
+<Base>
     {posts.map((post) => <PostCard frontmatter={post.frontmatter} url={post.url} content={post.rawContent()}/> )}
-</Index>
+</Base>

@@ -1,32 +1,32 @@
 ---
-import ClockIcon from "./icons/clock_icon.astro"
-import {calculateReadingTime} from "../utils.js"
+import ClockIcon from "./icons/clock_icon.astro";
+import { calculateReadingTime } from "../utils.js";
 
 type Props = {
-    content: string
-}
+  content: string;
+};
 
-const {content} = Astro.props;
+const { content } = Astro.props;
 ---
 
 <div class="time">
-    <ClockIcon/>
-    <p>{calculateReadingTime(content)} min</p>
-</div> 
+  <ClockIcon />
+  <p>{calculateReadingTime(content)} min</p>
+</div>
 
 <style>
-    .time {
-        display: flex;
-        gap: 6px;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--background);
-        padding: 8px;
-        border-radius: 12px;
-    } 
+  .time {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+    padding: 8px;
+    border-radius: 12px;
+  }
 
-    p {
-        font-size: initial;
-        line-height: normal;
-    }
+  p {
+    font-size: initial;
+    line-height: normal;
+  }
 </style>

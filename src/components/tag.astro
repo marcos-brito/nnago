@@ -1,27 +1,27 @@
 ---
-import TagIcon from "./icons/tag_icon.astro"
+import TagIcon from "./icons/tag_icon.astro";
 
-const {name} = Astro.props;
+const { name } = Astro.props;
 ---
 
 <div class="tag">
-    <TagIcon/>
-    <p>{name}</p>
-</div> 
+  <TagIcon />
+  <p>{name}</p>
+</div>
 
 <style>
-    .tag {
-        display: flex;
-        gap: 6px;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--background);
-        padding: 8px;
-        border-radius: 12px;
-    }
+  .tag {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+    padding: 8px;
+    border-radius: 12px;
+  }
 
-    p {
-        font-size: initial;
-        line-height: normal;
-    }
+  p {
+    font-size: initial;
+    line-height: normal;
+  }
 </style>

@@ -1,100 +1,99 @@
 ---
 import type { FrontMatter } from "../utils";
 import Tag from "./tag.astro";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import Time from "./time.astro";
 
 type Props = {
-    frontmatter: FrontMatter,
-    url: string,
-    content: string,
-}
+  frontmatter: FrontMatter;
+  url: string;
+  content: string;
+};
 
-const {frontmatter, url, content} = Astro.props;
+const { frontmatter, url, content } = Astro.props;
 ---
 
 <a href={url}>
-    <article class="post-card">
-            <div class="text">
-                <p class="date">{frontmatter.date}</p>
-                <h1 class="title">{frontmatter.title}</h1>
-                <p>{frontmatter.description}...</p>
-                <div class="tags">
-                    <Time content={content}/>
-                    {frontmatter.tags.split(" ").map((tag) => <Tag name={tag}/> )}
-                </div>
-            </div>
-            <Image src={frontmatter.image} alt="Post image" width={250} height={250}/>
-    </article>
+  <article class="post-card">
+    <div class="text">
+      <p class="date">{frontmatter.date}</p>
+      <h1 class="title">{frontmatter.title}</h1>
+      <p>{frontmatter.description}...</p>
+      <div class="tags">
+        <Time content={content} />
+        {frontmatter.tags.split(" ").map((tag) => <Tag name={tag} />)}
+      </div>
+    </div>
+    <Image src={frontmatter.image} alt="Post image" width={250} height={250} />
+  </article>
 </a>
 
 <style>
+  .post-card {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background2);
+    border-radius: 8px;
+    padding: 32px 64px;
+  }
+
+  p {
+    font-size: initial;
+    line-height: 1.5rem;
+    text-align: justify;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 70%;
+  }
+
+  .date {
+    opacity: 60%;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media only screen and (max-width: 600px) {
     .post-card {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--background2);
-        border-radius: 8px;
-        padding: 32px 64px;
+      flex-direction: column-reverse;
+      padding: 32px 32px;
     }
 
-    p {
-        font-size: initial;
-        line-height: 1.5rem;
-        text-align: justify;
+    .img {
+      width: 100%;
     }
 
     .text {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        width: 70%;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .post-card {
+      flex-direction: column-reverse;
     }
 
-    .date {
-        opacity: 60%;
+    .img {
+      width: 100%;
+      aspect-ratio: 16/9;
     }
 
-    .title {
-        font-weight: 600;
-        font-size: 1.5rem;
+    .text {
+      width: 100%;
     }
-
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    @media only screen and (max-width: 600px) {
-        .post-card {
-            flex-direction: column-reverse;
-            padding: 32px 32px;
-        }
-
-        .img {
-            width: 100%;
-        }
-
-        .text {
-            width: 100%;
-        }
-
-    }
-
-    @media only screen and (min-width: 601px) and (max-width: 1024px) {
-        .post-card {
-            flex-direction: column-reverse;
-        }
-
-        .img {
-            width: 100%;
-            aspect-ratio: 16/9;
-        }
-
-        .text {
-            width: 100%;
-        }
-    }
+  }
 </style>

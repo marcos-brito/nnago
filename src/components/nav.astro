@@ -1,113 +1,73 @@
 ---
-import Hamburger from "./icons/menu_icon.astro"
+import MenuIcon from "./icons/MenuIcon.astro";
 ---
 
-<script>
-    let hamburger = document.querySelector(".hamburger");
-    let closeButton = document.querySelector(".close");
-    let menu = document.querySelector(".menu");
-    
-    hamburger.addEventListener("click", showMenu);
-    closeButton.addEventListener("click", hideMenu);
-
-    function showMenu() {
-        menu.style.display = "flex";
-    }
-
-    function hideMenu() {
-        menu.style.display = "none";
-    }
-</script>
-
-<nav class="nav">
-    <div class="menu">
-        <div>
-            <a class="logo" href="/nnago">nnago</a>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x close" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ddc7a1" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
-        </div>
-        <div class="menu-items">
-            <a href="/nnago/about">about</a>
-            <a href="/nnago/resume">resume</a>
-        </div>
-    </div>
-    <a class="logo" href="/nnago">nnago</a>
-    <div class="nav-items">
-        <a href="/nnago/about">about</a>
-        <a href="/nnago/resume">resume</a>
-    </div>
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2 hamburger" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ddc7a1" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
-</nav>
+<header>
+  <a href="/nnago">nnago</a>
+  <nav>
+    <a href="/nnago/about">about</a>
+    <a href="/nnago/resume">resume</a>
+  </nav>
+  <button popovertarget="menu">
+    <MenuIcon />
+  </button>
+  <div id="menu" popover>
+    <nav>
+      <a href="/nnago/about">about</a>
+      <a href="/nnago/resume">resume</a>
+    </nav>
+  </div>
+</header>
 
 <style>
-    .nav {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 64px;
+  }
+
+  header > nav {
+    display: flex;
+    gap: 32px;
+  }
+
+  header > a {
+    color: var(--magenta);
+    font-size: 2rem;
+  }
+
+  button {
+    background-color: transparent;
+    display: none;
+  }
+
+  div {
+    position: absolute;
+    top: 100px;
+    left: calc(100% - 100px);
+
+    nav {
       display: flex;
-      justify-content: space-between;
-      align-items:center;
-      font-size: 1.25rem;
-      font-weight: 600;
-      padding: 64px;
+      flex-direction: column;
+      gap: 16px;
+      font-size: 14px;
+    }
+  }
+
+  a {
+    color: var(--foreground);
+  }
+
+  @media only screen and (max-width: 600px) {
+    button {
+      display: inline;
     }
 
-    .menu {
-        z-index: 1;
-        display: none ;
-        align-items: center;
-        flex-direction: column;
-        padding: 64px;
-        gap: 32px;
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        background-color: var(--background2);
+    header > nav {
+      display: none;
     }
-
-    .menu div {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .menu-items {
-        margin-top: 32px;
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-    }
-
-    .hamburger {
-        cursor: pointer;
-        display: none;
-    }
-
-    .close {
-        cursor: pointer;
-    }
-
-    a {
-        color: var(--foreground)
-    }
-
-    .nav-items {
-      display: flex;
-      gap: 32px;
-    }
-
-    .logo {
-      color: var(--magenta);
-      font-size: 2rem;
-    }
-
-    @media only screen and (max-width: 600px) {
-        .hamburger {
-            display: inline;
-        }
-
-        .nav-items {
-          display: none;
-        }
-    }
-
+  }
 </style>

@@ -12,10 +12,6 @@
     --red: #ea6962;
 }
 
-svg {
-    stroke: var(--red);
-}
-
 * {
     box-sizing: border-box;
     padding: 0;
@@ -35,7 +31,11 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--magenta2);
+    color: var(--blue);
+}
+
+svg {
+    stroke: var(--red);
 }
 
 img {

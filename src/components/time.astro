@@ -2,13 +2,16 @@
 import ClockIcon from "./icons/clock_icon.astro"
 import {calculateReadingTime} from "../utils.js"
 
-const {path} = Astro.props;
-const timeToRead = await calculateReadingTime(path);
+type Props = {
+    content: string
+}
+
+const {content} = Astro.props;
 ---
 
 <div class="time">
     <ClockIcon/>
-    <p>{timeToRead} min</p>
+    <p>{calculateReadingTime(content)} min</p>
 </div> 
 
 <style>

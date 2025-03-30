@@ -1,11 +1,16 @@
 ---
+import type { FrontMatter } from "../utils";
 import Tag from "./tag.astro";
+import { Image } from 'astro:assets';
 import Time from "./time.astro";
-import {getFilePreview} from "../utils.js";
 
-const {frontmatter, url, path} = Astro.props;
-const tags = frontmatter.tags.split(" ");
-const image = `url(${frontmatter.image})`;
+type Props = {
+    frontmatter: FrontMatter,
+    url: string,
+    content: string,
+}
+
+const {frontmatter, url, content} = Astro.props;
 ---
 
 <a href={url}>
@@ -15,15 +20,15 @@ const image = `url(${frontmatter.image})`;
                 <h1 class="title">{frontmatter.title}</h1>
                 <p>{frontmatter.description}...</p>
                 <div class="tags">
-                    <Time path={path}/>
-                    {tags.map((tag) => <Tag name={tag}/> )}
+                    <Time content={content}/>
+                    {frontmatter.tags.split(" ").map((tag) => <Tag name={tag}/> )}
                 </div>
             </div>
-            <div class="img"/>
+            <Image src={frontmatter.image} alt="Post image" width={250} height={250}/>
     </article>
 </a>
 
-<style define:vars={{image}}>
+<style>
     .post-card {
         display: flex;
         gap: 2rem;
@@ -38,16 +43,6 @@ const image = `url(${frontmatter.image})`;
         font-size: initial;
         line-height: 1.5rem;
         text-align: justify;
-    }
-
-    .img {
-        width: 30%;
-        aspect-ratio: 1;
-        background-image: var(--image);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        border-radius: 8px;
     }
 
     .text {

@@ -1,0 +1,15 @@
+---
+import type { FrontMatter } from "../utils";
+import type { MarkdownLayoutProps } from "astro";
+import Base from "./Base.astro";
+import TableOfContents from "../components/TableOfContents.astro";
+
+type Props = MarkdownLayoutProps<FrontMatter>;
+
+const { headings } = Astro.props;
+---
+
+<Base>
+  <TableOfContents {headings} />
+  <slot />
+</Base>

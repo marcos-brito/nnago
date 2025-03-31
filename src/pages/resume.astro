@@ -1,8 +1,37 @@
 ---
 import Base from "../layouts/Base.astro";
+import { SEO } from "astro-seo";
 ---
 
 <Base>
+  <SEO
+    slot="seo"
+    title="Resume"
+    description="Check Marcos Brito's resume and learn where to find him"
+    charset="UTF-8"
+    twitter={{
+      card: "summary",
+      title: "Marcos Brito's Resume - Software Enginner",
+      description: "Check Marcos Brito's resume and learn where to find him",
+      image: `https://marcos-brito.github.io/nnago/logo.png`,
+      imageAlt: "Website's logo",
+    }}
+    openGraph={{
+      basic: {
+        title: "Marcos Brito's Resume - Software Enginner",
+        type: "website",
+        image: `https://marcos-brito.github.io/nnago/logo.png`,
+        url: "https://marcos-brito.github.io/nnago/resume",
+      },
+      optional: {
+        description: "Check Marcos Brito's resume and learn where to find him",
+        siteName: "nnago",
+      },
+      image: {
+        alt: "Website's logo",
+      },
+    }}
+  />
   <div>
     <p>
       My resume is available for download <a

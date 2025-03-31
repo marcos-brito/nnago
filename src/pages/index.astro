@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import PostCard from "../components/PostCard.astro";
 import type { MarkdownInstance } from "astro";
 import type { FrontMatter } from "../utils";
+import { SEO } from "astro-seo";
 
 const posts = Object.values(
   import.meta.glob<MarkdownInstance<FrontMatter>>("./posts/*.md", {
@@ -12,6 +13,34 @@ const posts = Object.values(
 ---
 
 <Base>
+  <SEO
+    slot="seo"
+    title="nnago"
+    description="A programming blog and personal website for Marcos Brito"
+    charset="UTF-8"
+    twitter={{
+      card: "summary",
+      title: "Marcos Brito on Software Engineering",
+      description: "A programming blog and personal website for Marcos Brito",
+      image: `https://marcos-brito.github.io/nnago/logo.png`,
+      imageAlt: "Website's logo",
+    }}
+    openGraph={{
+      basic: {
+        title: "Marcos Brito on Software Engineering",
+        type: "website",
+        image: `https://marcos-brito.github.io/nnago/logo.png`,
+        url: "https://marcos-brito.github.io/nnago",
+      },
+      optional: {
+        description: "A programming blog and personal website for Marcos Brito",
+        siteName: "nnago",
+      },
+      image: {
+        alt: "Website's logo",
+      },
+    }}
+  />
   {
     posts.map((post) => (
       <PostCard

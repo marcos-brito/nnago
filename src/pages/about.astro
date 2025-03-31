@@ -1,8 +1,37 @@
 ---
-import Index from "../layouts/Base.astro";
+import Base from "../layouts/Base.astro";
+import { SEO } from "astro-seo";
 ---
 
-<Index>
+<Base>
+  <SEO
+    slot="seo"
+    title="About"
+    description="Learn more about Marcos Brito and his career"
+    charset="UTF-8"
+    twitter={{
+      card: "summary",
+      title: "About Marcos Brito - Software Enginner",
+      description: "Learn more about Marcos Brito and his career",
+      image: `https://marcos-brito.github.io/nnago/logo.png`,
+      imageAlt: "Website's logo",
+    }}
+    openGraph={{
+      basic: {
+        title: "About Marcos Brito - Software Enginner",
+        type: "website",
+        image: `https://marcos-brito.github.io/nnago/logo.png`,
+        url: "https://marcos-brito.github.io/nnago/about",
+      },
+      optional: {
+        description: "Learn more about Marcos Brito and his career",
+        siteName: "nnago",
+      },
+      image: {
+        alt: "Website's logo",
+      },
+    }}
+  />
   <div>
     <p>
       Hello there. My name is Marcos Brito and, I've been writing code for a
@@ -53,7 +82,7 @@ import Index from "../layouts/Base.astro";
       <a href="/nnago/resume">resume page</a>. Thank you for your time.
     </p>
   </div>
-</Index>
+</Base>
 
 <style>
   div {

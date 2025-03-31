@@ -3,13 +3,49 @@ import type { FrontMatter } from "../utils";
 import type { MarkdownLayoutProps } from "astro";
 import Base from "./Base.astro";
 import TableOfContents from "../components/TableOfContents.astro";
+import { SEO } from "astro-seo";
 
 type Props = MarkdownLayoutProps<FrontMatter>;
 
-const { headings } = Astro.props;
+const { headings, frontmatter, url } = Astro.props;
 ---
 
 <Base>
+  <SEO
+    slot="seo"
+    title={frontmatter.title}
+    description={frontmatter.description}
+    charset="UTF-8"
+    twitter={{
+      card: "summary",
+      title: frontmatter.ogTitle,
+      description: frontmatter.description,
+      image: `https://marcos-brito.github.io${frontmatter.image}`,
+      imageAlt: frontmatter.imageAlt,
+    }}
+    ,
+    openGraph={{
+      basic: {
+        title: frontmatter.ogTitle,
+        type: "article",
+        image: `https://marcos-brito.github.io${frontmatter.image}`,
+        url: url,
+      },
+      optional: {
+        description: frontmatter.description,
+        siteName: "nnago",
+      },
+      article: {
+        publishedTime: new Date(frontmatter.publishedDate).toISOString(),
+        modifiedTime: new Date(frontmatter.modifiedDate).toISOString(),
+        authors: ["Marcos Brito"],
+        tags: frontmatter.tags.split(" "),
+      },
+      image: {
+        alt: frontmatter.imageAlt,
+      },
+    }}
+  />
   <TableOfContents {headings} />
   <slot />
 </Base>

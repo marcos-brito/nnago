@@ -43,8 +43,10 @@ The first thing that might come to mind is just use the `script` tag and define 
 
 After running this you'll get something like:
 
-`Failed to load resource: the server responded with a status of 404 (Not Found)`
-`localhost:{SOME_PORT}/{PUBLIC_PATH_TO_PLUGIN}`
+```
+Failed to load resource: the server responded with a status of 404 (Not Found)
+localhost:{SOME_PORT}/{PUBLIC_PATH_TO_PLUGIN}`
+```
 
 > SOME_PORT and PUBLIC_PATH_TO_PLUGIN are just placeholders ok? You'll see something different on your screen.
 
@@ -61,7 +63,9 @@ Let's try something different. It's possible to open files in the browser using 
 
 That gave us a different result, but it's not quite what we want:
 
-`Not allowed to load local resource: file://{PUBLIC_PATH_TO_PLUGIN}`
+```
+Not allowed to load local resource: file://{PUBLIC_PATH_TO_PLUGIN}
+```
 
 Now we have two problems. Damn. But worry not, my friend, we also have two solutions:
 

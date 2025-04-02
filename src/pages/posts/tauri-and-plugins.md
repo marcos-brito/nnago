@@ -7,7 +7,7 @@ imageAlt: A floppy disk
 publishedDate: 04-02-2025
 modifiedDate: 04-02-2025
 tags: tauri plugin quickjs
-description: Learn different approachs to create a plugin system with Tauri. We'll talk about CSP, QuickJS and some projects that can used as inspiration
+description: Learn different approaches to create a plugin system with Tauri. We'll talk about CSP, QuickJS and a few projects that can be used as inspiration
 ---
 
 # Introduction
